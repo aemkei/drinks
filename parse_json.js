@@ -54,4 +54,6 @@ files.forEach(file => {
 
 recipes.sort((a, b) => b.rating - a.rating);
 
-console.log(JSON.stringify(recipes, null, 2));
+console.log(
+  JSON.stringify(recipes, null, 2).replace(/Difford/gi, 'D')
+);

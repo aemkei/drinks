@@ -52,7 +52,7 @@
     "comment": "Reminiscent of a Hemingway Special, this flavoursome, vanilla laced Daiquiri has a wonderfully tangy, bitter sweet finish."
   },
   {
-    "name": "Mai Tai (Difford's recipe)",
+    "name": "Mai Tai (D's recipe)",
     "rating": 5,
     "ingredients": [
       "1 shot Bacardi Ocho Anos Gran Reserva Rum",
@@ -70,7 +70,7 @@
     "comment": "We love Daiquiris and this is basically a classic Daiquiri with a few bells and whistles: Orange curaçao, lime juice, almond syrup, amaretto, falernum, \nwhite crème de menthe and absinthe."
   },
   {
-    "name": "Margarita on-the-rocks (Difford's recipe)",
+    "name": "Margarita on-the-rocks (D's recipe)",
     "rating": 5,
     "ingredients": [
       "1½ shot Patrón Reposado (orange seal) 100% agave tequila",
@@ -78,7 +78,7 @@
       "¾ shot Freshly squeezed lime juice",
       "1 spoon AquaRiva Organic Agave Syrup",
       "½ pinch Salt",
-      "4 drop Difford's Margarita Bitters by Bob's Bitters (optional)"
+      "4 drop D's Margarita Bitters by Bob's Bitters (optional)"
     ],
     "instructions": "SHAKE all ingredients with ice and strain into ice-filled glass.",
     "garnish": "Salt rim (optional) & lime wedge",
@@ -112,7 +112,7 @@
     "comment": "When made correctly, this pale pink cocktail has a perfect balance between the fruit flavours and the spirit of the rum."
   },
   {
-    "name": "Aviation Cocktail (Difford's recipe)",
+    "name": "Aviation Cocktail (D's recipe)",
     "rating": 5,
     "ingredients": [
       "1¾ shot Rutte Dry Gin",
@@ -194,7 +194,7 @@
     "comment": "A great looking, beautifully balanced after-dinner drink."
   },
   {
-    "name": "Pisco Punch (Difford's recipe)",
+    "name": "Pisco Punch (D's recipe)",
     "rating": 5,
     "ingredients": [
       "2 dried Clove",
@@ -442,7 +442,7 @@
     "comment": "Traditionally a Natural Daiquiri should always be based on light rum but if I should feel like breaking with tradition and using aged rum, I find Embury's 8:2:1 formula works particularly well."
   },
   {
-    "name": "Difford's Fruit Cup No.1 (gin based & Pimm's Cup-like)",
+    "name": "D's Fruit Cup No.1 (gin based & Pimm's Cup-like)",
     "rating": 5,
     "ingredients": [
       "1 shot Rutte Dry Gin",
@@ -483,7 +483,7 @@
     "comment": "A boozy brandy influenced wet, sweet Martini with a hint of orange. Only discerning drinkers need apply. Those after sweet, less challenging drinks should refrain."
   },
   {
-    "name": "Bloody Mary (Difford's recipe)",
+    "name": "Bloody Mary (D's recipe)",
     "rating": 5,
     "ingredients": [
       "½ ring Yellow bell pepper (chopped)",
@@ -529,7 +529,7 @@
     "comment": "Basically, an Aviation without crème de violette, dried and made more complex with a dash of orange bitters."
   },
   {
-    "name": "Daiquiri No.1 on-the-rocks (Difford's 10:3:2 formula)",
+    "name": "Daiquiri No.1 on-the-rocks (D's 10:3:2 formula)",
     "rating": 5,
     "ingredients": [
       "2½ shot Bacardi Carta Blanca Superior White Rum (37.5%)",
@@ -541,7 +541,7 @@
     "comment": "Light and refreshing. No one flavour predominates - sweet and sour are in harmony with the rum."
   },
   {
-    "name": "Daiquiri No.1 frozen (Difford's 16:6:6:1 formula)",
+    "name": "Daiquiri No.1 frozen (D's 16:6:6:1 formula)",
     "rating": 5,
     "ingredients": [
       "2 shot Bacardi Carta Blanca Superior White Rum (37.5%)",
@@ -649,7 +649,7 @@
     "comment": "A smokin' Margarita."
   },
   {
-    "name": "Mojito Cocktail (Difford's method)",
+    "name": "Mojito Cocktail (D's method)",
     "rating": 5,
     "ingredients": [
       "12 fresh Mint leaves",
@@ -739,7 +739,7 @@
     ],
     "instructions": "THROW all ingredients with ice and strain into chilled glass.",
     "garnish": "Edible flower",
-    "comment": "Created in 2006 by yours truly (Simon Difford) in London, England."
+    "comment": "Created in 2006 by yours truly (Simon D) in London, England."
   },
   {
     "name": "Rum Swizzle",
@@ -1181,7 +1181,7 @@
     "comment": "Mezcal and blood orange juice with sweet spice added with cinnamon syrup and clove rich falernum."
   },
   {
-    "name": "Pina Colada (Difford’s recipe)",
+    "name": "Pina Colada (D’s recipe)",
     "rating": 5,
     "ingredients": [
       "2 shot Bacardi Carta Blanca Superior White Rum (37.5%)",
@@ -1222,7 +1222,7 @@
     "comment": "A hint of agave syrup sweetness knocks and dilution from the stirred ice knock back the spirit's fire while opening and releasing flavours."
   },
   {
-    "name": "Bamboo Cocktail (Difford's 'Perfect' recipe)",
+    "name": "Bamboo Cocktail (D's 'Perfect' recipe)",
     "rating": 5,
     "ingredients": [
       "1½ shot Fino sherry",
@@ -1733,7 +1733,7 @@
     "comment": "Dry, delicate. Aromatic and complex."
   },
   {
-    "name": "Difford's Fruit Cup No.4 (Rum based)",
+    "name": "D's Fruit Cup No.4 (Rum based)",
     "rating": 5,
     "ingredients": [
       "1 shot Bacardi Carta Oro Superior Gold Rum",
@@ -1748,7 +1748,7 @@
     "comment": "There’s a splash of cola in this fruit cup and the classic marriage of rum and cola sings out in this flavoursome summery, almost tropical, fruit cup. Light golden rum seems to work best, but light white and aged rums also make a great fruit cup."
   },
   {
-    "name": "Difford's Fruit Cup No.7 (Tequila based)",
+    "name": "D's Fruit Cup No.7 (Tequila based)",
     "rating": 5,
     "ingredients": [
       "1 shot Patrón Reposado (orange seal) 100% agave tequila",
@@ -1763,7 +1763,7 @@
     "comment": "Despite being in a relatively small proportion to all the other ingredients in this summery cocktail, tequila’s distinctive notes shine through in the finished drink. We’ve used a reposado tequila but the drink it works equally well, and slightly differently, with a blanco or añejo tequilas."
   },
   {
-    "name": "Difford's Fruit Cup No.8 (Mezcal based)",
+    "name": "D's Fruit Cup No.8 (Mezcal based)",
     "rating": 5,
     "ingredients": [
       "1 shot Del Maguey VIDA de San Luis del Rio 100% agave blanco mezcal Buy from amazon",
@@ -1778,7 +1778,7 @@
     "comment": "While some struggle to appreciate mezcal its robust, slightly smoky character adds depth and complexity to this delicious summery cocktail. (If they served this at Wimbledon I could get into watching balls propelled back and forth.)"
   },
   {
-    "name": "Difford's Fruit Cup No.9 (Pisco based)",
+    "name": "D's Fruit Cup No.9 (Pisco based)",
     "rating": 5,
     "ingredients": [
       "1 shot BarSol Supremo Mosto Verde Italia Pisco",
@@ -1793,7 +1793,7 @@
     "comment": "Pisco (and Peruvian bitters) add a distinctive south American touch to this summery drink. Ripe grape notes emerge and add to the drink’s citrussy fruitiness."
   },
   {
-    "name": "Difford's Fruit Cup No.10 (Cachaça based)",
+    "name": "D's Fruit Cup No.10 (Cachaça based)",
     "rating": 5,
     "ingredients": [
       "1 shot Capucana Handcrafted Cachaca",
@@ -1808,7 +1808,7 @@
     "comment": "A fruit cup is just not as fruity when made with any other spirit – yes cachaça is distilled from fermented sugar cane juice rather than fruit, but in this cocktail it seems to amplify fruity and sweet notes. While it may not go down well at Wimbledon, we’re sure it would be a hit in Rio."
   },
   {
-    "name": "Difford's Fruit Cup No.13 (Calavdos based)",
+    "name": "D's Fruit Cup No.13 (Calavdos based)",
     "rating": 5,
     "ingredients": [
       "1 shot Berneroy Fine Calvados",
@@ -1823,7 +1823,7 @@
     "comment": "While apple slices are a poor choice of garnish in a fruit cup due to their propensity to turn brown (dehydrated slices are the answer), the crisp dry apple freshness that calvados brings to this fruity long drink makes it one of the best base spirits to opt for."
   },
   {
-    "name": "Difford's Fruit Cup No.14 (Aged rum based)",
+    "name": "D's Fruit Cup No.14 (Aged rum based)",
     "rating": 5,
     "ingredients": [
       "1 shot Bacardi Ocho Anos Gran Reserva Rum",
@@ -1838,7 +1838,7 @@
     "comment": "Aged rum’s sweet notes add a richness to this flavoursome fruit punch, seemingly adding tropical fruitiness."
   },
   {
-    "name": "Pineapple Martini (Difford's recipe)",
+    "name": "Pineapple Martini (D's recipe)",
     "rating": 5,
     "ingredients": [
       "2 shot Ketel One Vodka",
@@ -1853,7 +1853,7 @@
     "comment": "There’s a lot of Daiquiri going on in this very tasty vodka based cocktail – indeed so much that we couldn’t help trying the same drink with a rum base - a Pineapple Daiquiri."
   },
   {
-    "name": "Pineapple Daiquiri (Difford's recipe)",
+    "name": "Pineapple Daiquiri (D's recipe)",
     "rating": 5,
     "ingredients": [
       "1 shot Pineapple rum",
@@ -1869,7 +1869,7 @@
     "comment": "Tangy pineapple fruit laced with light white and aged rums. Yumm!"
   },
   {
-    "name": "French 75 (Difford's recipe)",
+    "name": "French 75 (D's recipe)",
     "rating": 5,
     "ingredients": [
       "1 shot Freshly squeezed lemon juice",
@@ -2045,7 +2045,7 @@
     "comment": "Sweet white vermouth and generous maraschino liqueur mellow the usual Tuxedo bone dryness while also adding aroma and flavour."
   },
   {
-    "name": "Tuxedo Cocktail (Difford's recipe)",
+    "name": "Tuxedo Cocktail (D's recipe)",
     "rating": 5,
     "ingredients": [
       "1½ shot Tanqueray Old Tom gin",
@@ -2118,14 +2118,14 @@
     "comment": "Bènèdictine takes the place of rum in this variation on a classic."
   },
   {
-    "name": "Daiquiri No.1 Natural (Difford's 10:3:2 recipe)",
+    "name": "Daiquiri No.1 Natural (D's 10:3:2 recipe)",
     "rating": 5,
     "ingredients": [
       "1⅔ shot Bacardi Carta Blanca Superior White Rum (37.5%)",
       "½ shot Freshly squeezed lime juice",
       "2 spoon Powdered sugar (or use 5ml of 2:1 sugar syrup per spoon)",
       "⅓ shot Chilled water",
-      "4 drop Difford's Daiquiri Bitters by Bob's Bitters (optional)"
+      "4 drop D's Daiquiri Bitters by Bob's Bitters (optional)"
     ],
     "instructions": "Cut zest from your lime prior to squeezing for juice. SHAKE all ingredients with ice and fine strain into chilled glass.",
     "garnish": "Lime zest twist (discarded) & lime wedge on rim",
@@ -2235,7 +2235,7 @@
     "comment": "A fabulous brunch cocktail.\n\nHow you squeeze (and blend) your oranges is key to achieving the \"fluffy\" orange juice that makes this drink special. At New York City's Dante they famously use a high-speed juicer which aerates the juice. Alternatively, juicing with a pillar or elbow press adds bitter zesty oils from the skin to the juice, hence our use of a smidgen of sugar syrup to balance."
   },
   {
-    "name": "Gimlet Cocktail (Difford's recipe)",
+    "name": "Gimlet Cocktail (D's recipe)",
     "rating": 5,
     "ingredients": [
       "1½ shot Rutte Dry Gin",
@@ -3478,7 +3478,7 @@
     "comment": "This blended version of a Pisco Sour is wha"
   },
   {
-    "name": "Pisco Sour (Difford's recipe)",
+    "name": "Pisco Sour (D's recipe)",
     "rating": 4.5,
     "ingredients": [
       "2 shot BarSol Supremo Mosto Verde Italia Pisco",
@@ -3489,7 +3489,7 @@
     ],
     "instructions": "SHAKE all ingredients with ice and fine strain into chilled glass.",
     "garnish": "Float three drops of Amargo Chuncho or Angostura aromatic bitters to signify health wealth and happiness.",
-    "comment": "Traditionally this drink is blended with crushed ice, but I (Simon Difford) prefer it served straight-up. Be sure to drink it quickly while it's still cold."
+    "comment": "Traditionally this drink is blended with crushed ice, but I (Simon D) prefer it served straight-up. Be sure to drink it quickly while it's still cold."
   },
   {
     "name": "Playmate cocktail",
@@ -3808,7 +3808,7 @@
     "comment": "Blood orange juice replaces sweet vermouth in this fruity Negroni."
   },
   {
-    "name": "Sidecar Cocktail (Difford's recipe)",
+    "name": "Sidecar Cocktail (D's recipe)",
     "rating": 4.5,
     "ingredients": [
       "1½ shot Cognac",
@@ -4349,7 +4349,7 @@
     ],
     "instructions": "SHAKE all ingredients with ice and fine strain into chilled glass.",
     "garnish": "Cinnamon powder rim",
-    "comment": "Back in 2003, this was the hit cocktail for Difford's Guide staff at the Bellagio, Las Vegas, after working at the Nightclub & Bar Beverage Convention. Try one and see why."
+    "comment": "Back in 2003, this was the hit cocktail for D's Guide staff at the Bellagio, Las Vegas, after working at the Nightclub & Bar Beverage Convention. Try one and see why."
   },
   {
     "name": "Tuxedo Cocktail Original",
@@ -4405,7 +4405,7 @@
     "comment": "A relatively dry cocktail where the vanilla combines beautifully with the cognac and the acidity of the wine balances the sweetness of the pineapple juice."
   },
   {
-    "name": "Bellini (Difford's recipe)",
+    "name": "Bellini (D's recipe)",
     "rating": 4.5,
     "ingredients": [
       "2 shot Peach purée",
@@ -4591,7 +4591,7 @@
     "comment": "Reputed to be a favourite of HRH Prince Charles."
   },
   {
-    "name": "Between the Sheets #1 (Difford's formula)",
+    "name": "Between the Sheets #1 (D's formula)",
     "rating": 4.5,
     "ingredients": [
       "¾ shot Bacardi Carta Blanca Superior White Rum (37.5%)",
@@ -5000,7 +5000,7 @@
     "comment": "Balanced and complex with a fruity blast of raspberry - made interesting due to its inclusion of vermouth."
   },
   {
-    "name": "Clover Club Cocktail No.3 (Difford's recipe)",
+    "name": "Clover Club Cocktail No.3 (D's recipe)",
     "rating": 4.5,
     "ingredients": [
       "5 fresh Raspberries",
@@ -5879,7 +5879,7 @@
     "comment": "Aromatic pear vodka and elderflower liqueur paired with biscuity champagne."
   },
   {
-    "name": "Pegu Club Cocktail (Difford's recipe)",
+    "name": "Pegu Club Cocktail (D's recipe)",
     "rating": 4.5,
     "ingredients": [
       "1½ shot Rutte Dry Gin",
@@ -7132,7 +7132,7 @@
     "comment": "A White Lady with grapefruit juice and so an extra dash of sugar to balance. Tasty."
   },
   {
-    "name": "Bijou Cocktail (Difford's recipe)",
+    "name": "Bijou Cocktail (D's recipe)",
     "rating": 4.5,
     "ingredients": [
       "1¼ shot Rutte Dry Gin",
@@ -7508,7 +7508,7 @@
     ],
     "instructions": "SHAKE all ingredients with ice and fine strain into chilled glass.",
     "garnish": "Orange zest twist",
-    "comment": "This Difford version of the established Jamie's Italian Gennaro's Sidecar is predictably boozier than the original, but retains the balance between sweet limoncello liqueur and tart lemon juice."
+    "comment": "This D version of the established Jamie's Italian Gennaro's Sidecar is predictably boozier than the original, but retains the balance between sweet limoncello liqueur and tart lemon juice."
   },
   {
     "name": "Ginger Mojito (Non-alcoholic)",
@@ -7689,7 +7689,7 @@
     "comment": "Tangy orange marmalade with gin and pisco rounded with bianco vermouth."
   },
   {
-    "name": "Snowball (Difford's recipe)",
+    "name": "Snowball (D's recipe)",
     "rating": 4.5,
     "ingredients": [
       "2 shot Brut Champagne",
@@ -8054,7 +8054,7 @@
     "comment": "Pineapple juice adds fruity tropical freshness and a foamy head to this cocktail which is fortified with cognac and aromatised with a splash of maraschino cherry liqueur and a couple of dashes of New Orleans bitters."
   },
   {
-    "name": "Club Cocktail (Difford’s recipe)",
+    "name": "Club Cocktail (D’s recipe)",
     "rating": 4.5,
     "ingredients": [
       "2 shot Cognac",
@@ -8391,7 +8391,7 @@
     "comment": "Bittersweet with a strong hint of gentian. A great aperitif."
   },
   {
-    "name": "Bitches' Brew cocktail (Difford's recipe)",
+    "name": "Bitches' Brew cocktail (D's recipe)",
     "rating": 4.5,
     "ingredients": [
       "1 shot Byrrh Grand Quinquina Aromatized Wine",
@@ -9123,7 +9123,7 @@
     ],
     "instructions": "STIR all ingredients with ice and strain into chilled glass.",
     "garnish": "Orange zest twist (discarded) & float pickled almond",
-    "comment": "Created by yours truly (Simon Difford) at the Cabinet Room, London, England.\n\nNamed after the Battle of Waterloo which was fought on Sunday 18th June 1815 near the town of Waterloo in present-day Belgium, then part of the Netherlands. The French army commanded by Napoleon Bonaparte was defeated by an Anglo-allied army commanded by the Duke of Wellington fittingly alongside a Prussian army commanded by Gebhard Leberecht von Blücher, Prince of Wahlstatt. Napoleon's defeat at Waterloo brought his reign as French Emperor to a sudden end."
+    "comment": "Created by yours truly (Simon D) at the Cabinet Room, London, England.\n\nNamed after the Battle of Waterloo which was fought on Sunday 18th June 1815 near the town of Waterloo in present-day Belgium, then part of the Netherlands. The French army commanded by Napoleon Bonaparte was defeated by an Anglo-allied army commanded by the Duke of Wellington fittingly alongside a Prussian army commanded by Gebhard Leberecht von Blücher, Prince of Wahlstatt. Napoleon's defeat at Waterloo brought his reign as French Emperor to a sudden end."
   },
   {
     "name": "Division Bell",
@@ -10469,7 +10469,7 @@
     "comment": "This white Negroni is not quite as dry and bitter as a traditional red Negroni and has additional pleasing creamy honeysuckle notes."
   },
   {
-    "name": "Amber Negroni (Difford's recipe)",
+    "name": "Amber Negroni (D's recipe)",
     "rating": 4.5,
     "ingredients": [
       "1 shot Rutte Dry Gin",
@@ -11021,7 +11021,7 @@
     "comment": "Natural acids from the pineapple make this more tart in flavour than some other fruit Caipirinhas, those with a sweet tooth may want to add an extra ½ spoon of sugar."
   },
   {
-    "name": "Difford's Fruit Cup No.3 (Cognac based)",
+    "name": "D's Fruit Cup No.3 (Cognac based)",
     "rating": 4.5,
     "ingredients": [
       "1 shot Cognac",
@@ -11036,7 +11036,7 @@
     "comment": "Cognac works well in this fruit cup, rounding the other ingredients to present as a more harmonious blend when compared to the same recipe made with gin. However, it’s more of a winter’s cup, without the freshening edge expected of a summer’s fruit cup."
   },
   {
-    "name": "Difford's Fruit Cup No.6 (Vodka based)",
+    "name": "D's Fruit Cup No.6 (Vodka based)",
     "rating": 4.5,
     "ingredients": [
       "1 shot Ketel One Vodka",
@@ -11051,7 +11051,7 @@
     "comment": "Vodka’s clean neutrality allows the fruity flavours in this summery cocktail to shine. It’s not surprising, that of the original line-up of seven different Pimm’s spirit bases, only No.1 (gin) and No.6 (vodka) survive."
   },
   {
-    "name": "Difford's Fruit Cup No.12 (Genever based)",
+    "name": "D's Fruit Cup No.12 (Genever based)",
     "rating": 4.5,
     "ingredients": [
       "1 shot Rutte Old Simon Genever",
@@ -12534,7 +12534,7 @@
     "comment": "Medium dry and wonderfully aromatic."
   },
   {
-    "name": "Cosmopolitan Cocktail (Difford's recipe)",
+    "name": "Cosmopolitan Cocktail (D's recipe)",
     "rating": 4.5,
     "ingredients": [
       "1 shot Ketel One Vodka",
@@ -13265,7 +13265,7 @@
       "½ shot Black raspberry liqueur",
       "½ shot Freshly squeezed lime juice",
       "1½ shot Fresh pressed pineapple juice",
-      "3 dash Difford's Daiquiri Bitters by Bob's Bitters"
+      "3 dash D's Daiquiri Bitters by Bob's Bitters"
     ],
     "instructions": "SHAKE all ingredients with ice and fine strain into chilled glass.",
     "garnish": "Pineapple wedge",
@@ -17835,7 +17835,7 @@
     "comment": "Well-balanced, refreshing spirit and orange. Not sweet."
   },
   {
-    "name": "Screwdriver (Difford's recipe)",
+    "name": "Screwdriver (D's recipe)",
     "rating": 4,
     "ingredients": [
       "2½ shot Ketel One Vodka",
@@ -18216,7 +18216,7 @@
     ],
     "instructions": "POUR lemonade and lime juice into ice-filled glass and then the advocaat which will mostly sink though the other ingredients. Lightly stir to integrate while retaining the lemonade’s carbonation.",
     "garnish": "Lime zest twist or lime slice",
-    "comment": "Fresh lime juice and lemonade freshens and invigorates creamy advocaat. Try our more luxurious Difford's Snowball recipe."
+    "comment": "Fresh lime juice and lemonade freshens and invigorates creamy advocaat. Try our more luxurious D's Snowball recipe."
   },
   {
     "name": "Southern Mint Cobbler",
@@ -21378,7 +21378,7 @@
     ],
     "instructions": "MUDDLE pepper in base of shaker. Add other ingredients, SHAKE with ice and fine strain into chilled glass.",
     "garnish": "Red pepper slice",
-    "comment": "Created in December 2008 by yours truly (Simon Difford) at the Cabinet Room, London, England."
+    "comment": "Created in December 2008 by yours truly (Simon D) at the Cabinet Room, London, England."
   },
   {
     "name": "Waldorf Cocktail No.2",
@@ -24306,7 +24306,7 @@
     "comment": "The name aptly describes the drink."
   },
   {
-    "name": "Singapore Sling (Difford’s recipe)",
+    "name": "Singapore Sling (D’s recipe)",
     "rating": 4,
     "ingredients": [
       "1½ shot Rutte Dry Gin",
@@ -24446,7 +24446,7 @@
     "comment": "This 2,1,1,1 original Cosmopolitan is slightly on the tart side of balanced with the citrus flavoured vodka shining over the other ingredients."
   },
   {
-    "name": "Moscow Mule (Difford's recipe)",
+    "name": "Moscow Mule (D's recipe)",
     "rating": 4,
     "ingredients": [
       "2 shot Ketel One Vodka",
@@ -27101,7 +27101,7 @@
     ],
     "instructions": "SHAKE all ingredients with ice and fine strain into julep cup half filled with crushed ice. CHURN (stir) the drink with the crushed ice using a bar spoon. Top up the cup with more crushed ice and CHURN again. Crown the drink with some fresh crushed ice, garnish and serve.",
     "garnish": "Mint sprigs dusted with icing sugar",
-    "comment": "Given the use of tequila I initially opted for agave syrup over sugar syrup but I found the caramel notes that this added somewhat overwhelmed the mint. Instead, perhaps consider using demerara sugar in place of white cane syrup or a mix of the two. To be honest, I found myself preferring the original whiskey based Mint Julep when tasted against each other but I’d encourage you to give a tequila based Mint Julep a try, and if you have a better version then please email me at simon@diffordsguide.com."
+    "comment": "Given the use of tequila I initially opted for agave syrup over sugar syrup but I found the caramel notes that this added somewhat overwhelmed the mint. Instead, perhaps consider using demerara sugar in place of white cane syrup or a mix of the two. To be honest, I found myself preferring the original whiskey based Mint Julep when tasted against each other but I’d encourage you to give a tequila based Mint Julep a try, and if you have a better version then please email me at simon@Dsguide.com."
   },
   {
     "name": "Tequila Club",
@@ -27262,7 +27262,7 @@
     ],
     "instructions": "STIR all ingredients with ice and strain into chilled glass.",
     "garnish": "Green olive on stick",
-    "comment": "Created in April 2017 by yours truly (Simon Difford) at the Cabinet Room, London, England."
+    "comment": "Created in April 2017 by yours truly (Simon D) at the Cabinet Room, London, England."
   },
   {
     "name": "Chocolate Rum & Raisin",
@@ -27475,7 +27475,7 @@
     "comment": "Oriental in name and style - perhaps a tad sweeter than your standard Cosmo."
   },
   {
-    "name": "Difford's Fruit Cup No.11 (Old Tom gin based)",
+    "name": "D's Fruit Cup No.11 (Old Tom gin based)",
     "rating": 4,
     "ingredients": [
       "1 shot Tanqueray Old Tom gin",
@@ -27688,7 +27688,7 @@
     "comment": "Rich berry balanced by citrus and charged with soda to fizz. The egg white ensures a lasting thick foaming head."
   },
   {
-    "name": "Sex On The Beach (Difford's recipe)",
+    "name": "Sex On The Beach (D's recipe)",
     "rating": 4,
     "ingredients": [
       "⅔ shot Original Peachtree Liqueur Buy from amazon",
@@ -29303,7 +29303,7 @@
     "comment": "Damson and amaretto sharpened by lemon juice."
   },
   {
-    "name": "Dark 'N' Stormy (Difford's recipe)",
+    "name": "Dark 'N' Stormy (D's recipe)",
     "rating": 4,
     "ingredients": [
       "1⅔ shot Goslings Black Seal Rum",
