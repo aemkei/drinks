@@ -193,7 +193,7 @@
 <div class="container">
 
     <div class="search-container">
-        <input type="text" id="search-input" placeholder="Search for a drink..." autocomplete="off">
+        <input type="text" id="search-input" placeholder="Search for a drink..." autocomplete="off" autofocus>
     </div>
 
     <div id="results-container" class="results">
@@ -262,7 +262,12 @@
 
     loadRecipes();
 
-
+    // Best-effort to open keyboard on startup
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            document.getElementById('search-input').focus();
+        }, 10);
+    });
 </script>
 
 </body>
