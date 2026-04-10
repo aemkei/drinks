@@ -12,6 +12,9 @@ files.forEach(file => {
   const html = fs.readFileSync(filePath, 'utf-8');
   const $ = cheerio.load(html);
 
+  const id = file.replace('recipe_', '').replace('.html', '');
+
+  
   const name = $("h1").text().trim();
   const instructions = $("[itemprop=recipeInstructions]").text().trim();
   
@@ -21,7 +24,8 @@ files.forEach(file => {
   const comment = $('[itemprop="description"]').text().trim();
   const garnishHeading = $('h3:contains("Garnish:"), h2:contains("Garnish:")');
   const garnish = garnishHeading.length > 0 ? garnishHeading.closest('tr').next('tr').find('.review__text').text().trim() : '';
-
+  
+  
   const ingredients = [];
   $('#cocktails_recipe_ingredients_table tr').each((_, element) => {
     // skip the glass row which usually contains "Serve in"
@@ -33,10 +37,10 @@ files.forEach(file => {
       }
     }
   });
-
+  
   const containsWhisky = ingredients.some(ing => ing.toLowerCase().includes('whisk'));
 
-  if (name && rating >= 4.5 && !containsWhisky) {
+  if (name && rating >= 4 && !containsWhisky) {
     recipes.push({
       name,
       rating,
