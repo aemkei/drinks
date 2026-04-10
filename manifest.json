@@ -1,0 +1,16 @@
+{
+  "name": "Cocktail Search",
+  "short_name": "Cocktails",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#fcfcfc",
+  "theme_color": "#3f51b5",
+  "icons": [
+    {
+      "src": "icon_material.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

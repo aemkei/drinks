@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cocktail Search</title>
+    <link rel="icon" type="image/png" href="icon_material.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#3f51b5">
+    <link rel="apple-touch-icon" href="icon_material.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Slabo+27px:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #fcfcfc;
+            --text: #000000;
+            --muted: #666;
+            --accent: #000;
+            --border: #e5e5e5;
+            --card-bg: #ffffff;
+            --shadow: 0 4px 20px rgba(0,0,0,0.03);
+            --radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Slabo 27px', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            line-height: 1.2;
+            font-size: 1.2em;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-weight: 300;
+            font-size: 2.5rem;
+            margin: 0;
+            letter-spacing: -0.02em;
+        }
+
+        small {
+            font-size: 1em;
+            color: var(--muted);
+            font-weight: 300;
+            font-variant: all-small-caps;
+        }
+
+        .search-container {
+            margin-bottom: 30px;
+        }
+
+        #search-input {
+            width: 100%;
+            padding: 18px 24px;
+            font-size: 1.1rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            outline: none;
+            background: var(--card-bg);
+            box-shadow: var(--shadow);
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+
+        #search-input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+        }
+
+        .results {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-wrap: balance;
+        }
+
+        .recipe-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            box-shadow: var(--shadow);
+            animation: fadeIn 0.4s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .recipe-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 0 0 10px 0;
+            letter-spacing: -0.01em;
+        }
+
+        .rating {
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .rating::before {
+            content: '★';
+            color: #ffb400;
+        }
+
+        .section-title {
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--muted);
+            margin-top: 20px;
+            margin-bottom: 8px;
+            letter-spacing: 0.05em;
+        }
+
+        .ingredients-list {
+            margin: 0;
+            padding: 0 0px;
+            list-style: none;
+            
+        }
+
+        .ingredients-list li {
+            padding: 4px 0;
+            border-bottom: 1px solid #f9f9f9;
+            text-indent: -9px;
+        }
+
+        .ingredients-list li:before {
+            content: "• ";
+            color: var(--muted);
+        }
+
+        .ingredients-list li:last-child {
+            border-bottom: none;
+        }
+
+        .instructions {
+            
+        }
+
+        .comment {
+            font-style: italic;
+            color: var(--muted);
+            background: #f9f9f9;
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .empty-state {
+            text-align: center;
+            color: var(--muted);
+            margin-top: 50px;
+            font-weight: 300;
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 2rem; }
+            body { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search for a drink..." autocomplete="off">
+    </div>
+
+    <div id="results-container" class="results">
+        <div class="empty-state">Start typing to find recipes</div>
+    </div>
+</div>
+
+<script>
+    let allRecipes = [];
+
+    async function loadRecipes() {
+        try {
+            const response = await fetch('all.json');
+            allRecipes = await response.json();
+        } catch (error) {
+            console.error('Error loading recipes:', error);
+            document.getElementById('results-container').innerHTML = 
+                '<div class="empty-state">Error loading recipes. Make sure all.json exists.</div>';
+        }
+    }
+
+    function renderRecipes(recipes) {
+        const container = document.getElementById('results-container');
+        if (recipes.length === 0) {
+            container.innerHTML = '<div class="empty-state">No matches found.</div>';
+            return;
+        }
+
+        container.innerHTML = recipes.slice(0, 20).map(recipe => `
+            <div class="recipe-card">
+                <div class="recipe-title">${recipe.name}</div>
+                <div class="rating">${recipe.rating} / 5</div>
+                
+
+                <div class="section-title">Ingredients</div>
+                <ul class="ingredients-list">
+                    ${recipe.ingredients.map(ing => `<li>${
+                        ing.replace(/ shot /g, ' <small>shot</small> ')
+                    }</li>`).join('')}
+                    ${recipe.garnish ? `<li><small>Garnish:</small> ${recipe.garnish}</li>` : ''}
+                </ul>
+
+                <div class="section-title">Instructions</div>
+                <div class="instructions">${recipe.instructions}</div>
+                ${recipe.comment ? `<div class="comment">${recipe.comment}</div>` : ''}
+
+            </div>
+        `).join('');
+    }
+
+    const searchInput = document.getElementById('search-input');
+    searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        if (!query) {
+            document.getElementById('results-container').innerHTML = 
+                '<div class="empty-state">Start typing to find recipes</div>';
+            return;
+        }
+
+        const matches = allRecipes.filter(recipe => 
+            recipe.name.toLowerCase().includes(query)
+        );
+
+        renderRecipes(matches);
+    });
+
+    loadRecipes();
+
+
+</script>
+
+</body>
+</html>
