@@ -2,7 +2,7 @@
     --bg: #fcfcfc;
     --text: #000000;
     --muted: #666;
-    --accent: #000;
+    --accent: #2196f3;
     --border: #e5e5e5;
     --card-bg: #ffffff;
     --shadow: 0 4px 20px rgba(0,0,0,0.03);
@@ -161,13 +161,18 @@ small {
     justify-content: center;
 }
 
-.bookmark-btn:hover {
+.bookmark-btn svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.2s ease;
+}
+
+.bookmark-btn:hover svg {
     transform: scale(1.1);
-    color: var(--text);
 }
 
 .bookmark-btn.active {
-    color: #ffb400;
+    color: var(--accent);
 }
 
 @keyframes fadeIn {
@@ -180,6 +185,7 @@ small {
     font-weight: 600;
     margin: 0 0 10px 0;
     letter-spacing: -0.01em;
+    padding-right: 30px;
 }
 
 .rating {
