@@ -113,6 +113,12 @@ small {
     background: #f0f0f0;
 }
 
+.highlight {
+    background-color: #e2f9e1;
+    color: inherit;
+    border-radius: 2px;
+}
+
 #search-input {
     width: 100%;
     padding: 18px 50px 18px 24px;

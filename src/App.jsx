@@ -107,6 +107,7 @@ export default function App() {
           <RecipeCard 
             key={recipe.id} 
             recipe={recipe} 
+            query={query}
             isBookmarked={bookmarks.includes(recipe.id)}
             onToggleBookmark={() => toggleBookmark(recipe.id)}
           />

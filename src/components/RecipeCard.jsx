@@ -1,6 +1,20 @@
 import React from 'react';
 
-export default function RecipeCard({ recipe, isBookmarked, onToggleBookmark }) {
+const highlightText = (text, query) => {
+  if (!query.trim()) return text;
+  const terms = query.split(/\s+/).filter(t => t.length > 0);
+  if (terms.length === 0) return text;
+  
+  const escapedTerms = terms.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+  const regex = new RegExp(`(${escapedTerms.join('|')})`, 'gi');
+  
+  const parts = text.split(regex);
+  return parts.map((part, i) => 
+    regex.test(part) ? `<mark class="highlight">${part}</mark>` : part
+  ).join('');
+};
+
+export default function RecipeCard({ recipe, query, isBookmarked, onToggleBookmark }) {
   return (
     <div className="recipe-card">
       <button 
@@ -12,18 +26,26 @@ export default function RecipeCard({ recipe, isBookmarked, onToggleBookmark }) {
           <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
         </svg>
       </button>
-      <div className="recipe-title">{recipe.name}</div>
+      <div 
+        className="recipe-title" 
+        dangerouslySetInnerHTML={{ __html: highlightText(recipe.name, query) }} 
+      />
       <div className="rating">{recipe.rating} / 5</div>
       
       <div className="section-title">Ingredients</div>
       <ul className="ingredients-list">
-        {recipe.ingredients.map((ing, idx) => (
-          <li key={idx} dangerouslySetInnerHTML={{ 
-            __html: ing.replace(/ shot /g, ' <small>shot</small> ') 
-          }} />
-        ))}
+        {recipe.ingredients.map((ing, idx) => {
+          // First handle the "shot" formatting, then highlight
+          const formatted = ing.replace(/ shot /g, ' <small>shot</small> ');
+          const highlighted = highlightText(formatted, query);
+          return (
+            <li key={idx} dangerouslySetInnerHTML={{ __html: highlighted }} />
+          );
+        })}
         {recipe.garnish && (
-          <li><small>Garnish:</small> {recipe.garnish}</li>
+          <li dangerouslySetInnerHTML={{ 
+            __html: `<small>Garnish:</small> ${highlightText(recipe.garnish, query)}` 
+          }} />
         )}
       </ul>
 
