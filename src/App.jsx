@@ -2,6 +2,10 @@ import React, { useState, useEffect, useMemo } from 'react';
 import RecipeCard from './components/RecipeCard.jsx';
 import BookmarkChips from './components/BookmarkChips.jsx';
 
+const escapeRegExp = (string) => {
+  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+};
+
 export default function App() {
   const [allRecipes, setAllRecipes] = useState([]);
   const [query, setQuery] = useState('');
@@ -33,19 +37,22 @@ export default function App() {
     const q = query.toLowerCase().trim();
     if (!q) return [];
 
-    const nameMatches = allRecipes.filter(r => 
-      r.name.toLowerCase().includes(q)
-    );
+    const nameMatches = allRecipes.filter(r => {
+      const regex = new RegExp(`\\b${escapeRegExp(q)}`, 'i');
+      return regex.test(r.name);
+    });
 
     const terms = q.split(/\s+/).filter(t => t.length > 0);
     const ingredientMatches = allRecipes.filter(r => {
       // Don't duplicate if it already matched by name
-      if (r.name.toLowerCase().includes(q)) return false;
+      const nameRegex = new RegExp(`\\b${escapeRegExp(q)}`, 'i');
+      if (nameRegex.test(r.name)) return false;
       
-      // All terms in the query must match at least one ingredient
-      return terms.every(term => 
-        r.ingredients.some(ing => ing.toLowerCase().includes(term))
-      );
+      // All terms in the query must match at least one ingredient's word-start
+      return terms.every(term => {
+        const termRegex = new RegExp(`\\b${escapeRegExp(term)}`, 'i');
+        return r.ingredients.some(ing => termRegex.test(ing));
+      });
     });
 
     return [...nameMatches, ...ingredientMatches].slice(0, 20);

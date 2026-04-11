@@ -6,7 +6,8 @@ const highlightText = (text, query) => {
   if (terms.length === 0) return text;
   
   const escapedTerms = terms.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
-  const regex = new RegExp(`(${escapedTerms.join('|')})`, 'gi');
+  // Match only if the term starts at a word boundary
+  const regex = new RegExp(`(\\b${escapedTerms.join('|\\b')})`, 'gi');
   
   const parts = text.split(regex);
   return parts.map((part, i) => 
