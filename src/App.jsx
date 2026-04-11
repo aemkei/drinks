@@ -120,6 +120,9 @@ export default function App() {
           />
         ))}
       </div>
+      <footer className="footer">
+        v{import.meta.env.VITE_APP_VERSION || '1.1.0'}
+      </footer>
     </div>
   );
 }

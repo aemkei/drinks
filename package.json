@@ -1,12 +1,13 @@
 {
   "name": "diffords",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "npm run version-sync && vite",
+    "build": "npm run version-sync && vite build",
     "preview": "vite preview",
+    "version-sync": "node scripts/version_sync.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
