@@ -1,13 +1,12 @@
 import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  // Root of the project is where index.html is
+  plugins: [react()],
   root: './',
-  // Output directory for build
   build: {
     outDir: 'dist',
   },
-  // Ensure the server serves index.html by default
   server: {
     open: true,
   }

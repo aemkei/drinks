@@ -42,6 +42,7 @@ files.forEach(file => {
 
   if (name && rating >= 4 && !containsWhisky) {
     recipes.push({
+      id,
       name,
       rating,
       ingredients,
