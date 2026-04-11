@@ -30,10 +30,25 @@ export default function App() {
 
   // Filter recipes based on query
   const filteredRecipes = useMemo(() => {
-    if (!query.trim()) return [];
-    return allRecipes.filter(r => 
-      r.name.toLowerCase().includes(query.toLowerCase().trim())
-    ).slice(0, 20);
+    const q = query.toLowerCase().trim();
+    if (!q) return [];
+
+    const nameMatches = allRecipes.filter(r => 
+      r.name.toLowerCase().includes(q)
+    );
+
+    const terms = q.split(/\s+/).filter(t => t.length > 0);
+    const ingredientMatches = allRecipes.filter(r => {
+      // Don't duplicate if it already matched by name
+      if (r.name.toLowerCase().includes(q)) return false;
+      
+      // All terms in the query must match at least one ingredient
+      return terms.every(term => 
+        r.ingredients.some(ing => ing.toLowerCase().includes(term))
+      );
+    });
+
+    return [...nameMatches, ...ingredientMatches].slice(0, 20);
   }, [allRecipes, query]);
 
   const toggleBookmark = (id) => {
