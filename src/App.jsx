@@ -17,7 +17,7 @@ export default function App() {
 
   // Load recipes on mount
   useEffect(() => {
-    fetch('/all.json')
+    fetch('all.json')
       .then(res => res.json())
       .then(data => setAllRecipes(data))
       .catch(err => console.error('Failed to load recipes:', err));
