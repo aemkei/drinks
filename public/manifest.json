@@ -1,0 +1,16 @@
+{
+  "name": "Drinks",
+  "short_name": "Drinks",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#fcfcfc",
+  "theme_color": "#fcfcfc",
+  "icons": [
+    {
+      "src": "icon_material.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
