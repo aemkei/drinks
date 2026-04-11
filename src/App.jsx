@@ -52,15 +52,26 @@ export default function App() {
   return (
     <div className="container">
       <div className="search-container">
-        <input
-          type="text"
-          id="search-input"
-          placeholder="Search for a drink..."
-          autoComplete="off"
-          autoFocus
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
+        <div className="input-wrapper">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search for a drink..."
+            autoComplete="off"
+            autoFocus
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+          {query && (
+            <button 
+              className="clear-btn" 
+              onClick={() => { setQuery(''); document.getElementById('search-input').focus(); }}
+              aria-label="Clear search"
+            >
+              ✕
+            </button>
+          )}
+        </div>
         {!query && (
           <BookmarkChips 
             bookmarks={bookmarks} 

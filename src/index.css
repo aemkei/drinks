@@ -55,6 +55,33 @@ small {
 .search-container {
     margin-bottom: 30px;
     position: relative;
+    width: 100%;
+}
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.clear-btn {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
+}
+
+.clear-btn:hover {
+    color: var(--text);
 }
 
 .bookmark-chips {
@@ -85,7 +112,7 @@ small {
 
 #search-input {
     width: 100%;
-    padding: 18px 24px;
+    padding: 18px 50px 18px 24px;
     font-size: 1.1rem;
     border: 1px solid var(--border);
     border-radius: var(--radius);
