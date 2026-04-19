@@ -242,13 +242,22 @@ small {
     border-bottom: none;
 }
 
-.comment {
+.comment, .review-box, .history-box {
     font-style: italic;
     color: var(--muted);
     background: #f9f9f9;
     padding: 12px;
     border-radius: 8px;
-    margin-top: 15px;
+    margin-top: 5px;
+    font-size: 0.95rem;
+}
+
+.review-box {
+    border-left: 4px solid #4caf50; /* Green aspect */
+}
+
+.history-box {
+    border-left: 4px solid #ff9800; /* Orange aspect */
 }
 
 .empty-state {

@@ -104,12 +104,40 @@ export default function RecipeCard({ recipe, query, isBookmarked, onToggleBookma
       </ul>
 
       <div className="section-title">Instructions</div>
-      <div className="instructions" dangerouslySetInnerHTML={{ 
-        __html: highlightText(replaceMlWithShots(recipe.instructions), query) 
-      }} />
-      {recipe.comment && <div className="comment" dangerouslySetInnerHTML={{
-        __html: highlightText(replaceMlWithShots(recipe.comment), query)
-      }} />}
+      <ol className="instructions-list" style={{ paddingLeft: '1.25rem', margin: '0.5rem 0' }}>
+        {Array.isArray(recipe.instructions) ? (
+          recipe.instructions.map((step, idx) => (
+            <li style={{ marginBottom: '0.5rem' }} key={idx} dangerouslySetInnerHTML={{ 
+              __html: highlightText(replaceMlWithShots(step), query) 
+            }} />
+          ))
+        ) : (
+          <li style={{ marginBottom: '0.5rem' }} dangerouslySetInnerHTML={{ 
+            __html: highlightText(replaceMlWithShots(recipe.instructions), query) 
+          }} />
+        )}
+      </ol>
+      {recipe.review && (
+        <div className="section-title">Review</div>
+      )}
+      {recipe.review && (
+        <div className="review-box" dangerouslySetInnerHTML={{
+          __html: highlightText(replaceMlWithShots(recipe.review), query)
+        }} />
+      )}
+      {recipe.history && (
+        <div className="section-title">History</div>
+      )}
+      {recipe.history && (
+        <div className="history-box" dangerouslySetInnerHTML={{
+          __html: highlightText(replaceMlWithShots(recipe.history), query)
+        }} />
+      )}
+      {recipe.comment && !recipe.review && !recipe.history && (
+        <div className="comment" dangerouslySetInnerHTML={{
+          __html: highlightText(replaceMlWithShots(recipe.comment), query)
+        }} />
+      )}
     </div>
   );
 }

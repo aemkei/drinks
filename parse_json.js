@@ -29,10 +29,36 @@ files.forEach(file => {
     } catch (e) {}
   }
 
+  const getSectionText = (htmlContent, anchorId) => {
+    // Look for id="anchorId" with a space before to avoid matching data-anchor-id
+    const idStr = ` id="${anchorId}"`;
+    const anchorIdx = htmlContent.indexOf(idStr);
+    if (anchorIdx === -1) return '';
+    
+    const pStart = htmlContent.indexOf('<p>', anchorIdx);
+    // Be generous to allow headings between the id and the paragraph
+    if (pStart === -1 || pStart - anchorIdx > 500) return '';
+    
+    const pEnd = htmlContent.indexOf('</p>', pStart);
+    if (pEnd === -1) return '';
+    
+    let text = htmlContent.substring(pStart + 3, pEnd);
+    // remove html tags
+    return text.replace(/<[^>]+>/g, '').trim();
+  };
+
   if (recipeData) {
     const name = recipeData.name || '';
     const rating = recipeData.aggregateRating ? parseFloat(recipeData.aggregateRating.ratingValue) : 0;
-    const comment = recipeData.description || '';
+    
+    let description = recipeData.description || '';
+    if (description.startsWith('Discover how to make')) {
+      description = '';
+    }
+    
+    const review = getSectionText(html, 'anchor-review');
+    const history = getSectionText(html, 'anchor-history');
+    
     const ingredients = recipeData.recipeIngredient || [];
     
     const instructionsArr = recipeData.recipeInstructions || [];
@@ -48,7 +74,7 @@ files.forEach(file => {
       }
     });
 
-    const instructions = instructionsSteps.join(' ');
+    const instructions = instructionsSteps;
     
     const containsWhisky = ingredients.some(ing => ing.toLowerCase().includes('whisk'));
 
@@ -60,7 +86,9 @@ files.forEach(file => {
         ingredients,
         instructions,
         garnish,
-        comment,
+        review,
+        history,
+        comment: description,
       });
     }
   }
