@@ -21,7 +21,8 @@ export default function App() {
 
   // Load recipes on mount
   useEffect(() => {
-    fetch('all.json')
+    const version = import.meta.env.VITE_APP_VERSION || '1.1.0';
+    fetch(`all.json?v=${version}`)
       .then(res => res.json())
       .then(data => setAllRecipes(data))
       .catch(err => console.error('Failed to load recipes:', err));

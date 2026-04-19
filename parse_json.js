@@ -1,60 +1,74 @@
 const fs = require('fs');
 const path = require('path');
-const cheerio = require('cheerio');
 
-const scrapingDir = path.join(__dirname, 'scraping');
+const scrapingDir = path.join(__dirname, 'scraping', '2026');
 const files = fs.readdirSync(scrapingDir).filter(f => f.endsWith('.html'));
 
 const recipes = [];
+const scriptRegex = /<script\s+type="application\/ld\+json">([\s\S]*?)<\/script>/gi;
 
 files.forEach(file => {
   const filePath = path.join(scrapingDir, file);
   const html = fs.readFileSync(filePath, 'utf-8');
-  const $ = cheerio.load(html);
-
+  
   const id = file.replace('recipe_', '').replace('.html', '');
 
+  let recipeData = null;
   
-  const name = $("h1").text().trim();
-  const instructions = $("[itemprop=recipeInstructions]").text().trim();
-  
-  const ratingStr = $("[itemprop=ratingValue]").attr("content");
-  const rating = ratingStr ? parseFloat(ratingStr) : 0;
-  
-  const comment = $('[itemprop="description"]').text().trim();
-  const garnishHeading = $('h3:contains("Garnish:"), h2:contains("Garnish:")');
-  const garnish = garnishHeading.length > 0 ? garnishHeading.closest('tr').next('tr').find('.review__text').text().trim() : '';
-  
-  
-  const ingredients = [];
-  $('#cocktails_recipe_ingredients_table tr').each((_, element) => {
-    // skip the glass row which usually contains "Serve in"
-    const hasGlass = $(element).has('td.cocktails_recipe_glass').length > 0;
-    if (!hasGlass) {
-      const ingredient = $(element).text().replace(/\s+/g, ' ').trim();
-      if (ingredient) {
-        ingredients.push(ingredient);
+  // Use regex to find all json-ld scripts
+  let match;
+  while ((match = scriptRegex.exec(html)) !== null) {
+    try {
+      const data = JSON.parse(match[1]);
+      if (data['@type'] === 'Recipe') {
+        recipeData = data;
+      } else if (Array.isArray(data)) {
+        const found = data.find(item => item['@type'] === 'Recipe');
+        if (found) recipeData = found;
       }
-    }
-  });
-  
-  const containsWhisky = ingredients.some(ing => ing.toLowerCase().includes('whisk'));
+    } catch (e) {}
+  }
 
-  if (name && rating >= 4 && !containsWhisky) {
-    recipes.push({
-      id,
-      name,
-      rating,
-      ingredients,
-      instructions,
-      garnish,
-      comment,
+  if (recipeData) {
+    const name = recipeData.name || '';
+    const rating = recipeData.aggregateRating ? parseFloat(recipeData.aggregateRating.ratingValue) : 0;
+    const comment = recipeData.description || '';
+    const ingredients = recipeData.recipeIngredient || [];
+    
+    const instructionsArr = recipeData.recipeInstructions || [];
+    let garnish = '';
+    const instructionsSteps = [];
+    
+    instructionsArr.forEach(step => {
+      // Check if this step is actually the garnish instruction
+      if (step.name && step.name.toLowerCase().includes('garnish')) {
+        garnish = step.text;
+      } else {
+        instructionsSteps.push(step.text || step);
+      }
     });
+
+    const instructions = instructionsSteps.join(' ');
+    
+    const containsWhisky = ingredients.some(ing => ing.toLowerCase().includes('whisk'));
+
+    if (name && rating >= 4 && !containsWhisky) {
+      recipes.push({
+        id,
+        name,
+        rating,
+        ingredients,
+        instructions,
+        garnish,
+        comment,
+      });
+    }
   }
 });
 
 recipes.sort((a, b) => b.rating - a.rating);
 
-console.log(
-  JSON.stringify(recipes, null, 2).replace(/Difford/gi, 'D')
-);
+const outputJson = JSON.stringify(recipes, null, 2).replace(/Difford\'s Guide|Difford/gi, 'D');
+
+fs.writeFileSync(path.join(__dirname, 'public', 'all.json'), outputJson);
+console.log(`Generated public/all.json with ${recipes.length} recipes.`);

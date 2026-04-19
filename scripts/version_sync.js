@@ -13,13 +13,15 @@ console.log(`Syncing version: ${version}`);
 // 1. Update .env
 fs.writeFileSync(envPath, `VITE_APP_VERSION=${version}\n`);
 
-// 2. Update sw.js CACHE_NAME and a version constant
+// 2. Update sw.js CACHE_NAME and cache buster
 let swContent = fs.readFileSync(swPath, 'utf8');
 
 // Replace CACHE_NAME version: cocktail-cache-vx.x.x
 swContent = swContent.replace(/const CACHE_NAME = 'cocktail-cache-v[^']*';/, `const CACHE_NAME = 'cocktail-cache-v${version}';`);
 
-// Ensure there is a version comment or constant if needed, but CACHE_NAME is enough for cache busting.
+// Replace all.json to ensure it always uses the cache buster string
+swContent = swContent.replace(/'\.\/all\.json(.*?)'/, `\'./all.json?v=${version}\'`);
+
 fs.writeFileSync(swPath, swContent);
 
 console.log('Version sync complete.');
