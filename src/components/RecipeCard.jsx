@@ -92,10 +92,17 @@ export default function RecipeCard({ recipe, query, isBookmarked, onToggleBookma
   const [showMore, setShowMore] = React.useState(false);
 
   return (
-    <div className="recipe-card">
+    <div 
+      className={`recipe-card ${!showMore ? 'clickable' : ''}`}
+      onClick={() => !showMore && setShowMore(true)}
+      style={{ cursor: !showMore ? 'pointer' : 'default' }}
+    >
       <button 
         className={`bookmark-btn ${isBookmarked ? 'active' : ''}`}
-        onClick={onToggleBookmark}
+        onClick={(e) => {
+          e.stopPropagation();
+          onToggleBookmark();
+        }}
         title={isBookmarked ? 'Remove from bookmarks' : 'Add to bookmarks'}
       >
         <svg viewBox="0 0 24 24" fill={isBookmarked ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

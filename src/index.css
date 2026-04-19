@@ -152,6 +152,12 @@ small {
     box-shadow: var(--shadow);
     animation: fadeIn 0.4s ease forwards;
     position: relative;
+    transition: all 0.2s ease;
+}
+
+.recipe-card.clickable:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
 }
 
 .bookmark-btn {
