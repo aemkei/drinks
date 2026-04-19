@@ -1,8 +1,8 @@
-const CACHE_NAME = 'cocktail-cache-v1.3.4';
+const CACHE_NAME = 'cocktail-cache-v1.4.1';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
-  './all.json?v=1.3.4',
+  './all.json?v=1.4.1',
   './icon_material.png',
   './manifest.json'
 ];

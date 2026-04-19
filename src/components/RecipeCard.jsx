@@ -66,7 +66,31 @@ const highlightText = (text, query) => {
   ).join('');
 };
 
+const Scale = ({ label, value, leftLabel, rightLabel }) => {
+  if (value === null || value === undefined) return null;
+  const percentage = (value / 10) * 100;
+  return (
+    <div className="scale-container">
+      <div className="scale-header">
+        <span className="scale-label">{label}</span>
+        <span className="scale-value">{value}/10</span>
+      </div>
+      <div className="scale-bar-wrapper">
+        <div className="scale-bar-bg">
+          <div className="scale-bar-fill" style={{ width: `${percentage}%` }} />
+        </div>
+      </div>
+      <div className="scale-footer">
+        <span>{leftLabel}</span>
+        <span>{rightLabel}</span>
+      </div>
+    </div>
+  );
+};
+
 export default function RecipeCard({ recipe, query, isBookmarked, onToggleBookmark }) {
+  const [showMore, setShowMore] = React.useState(false);
+
   return (
     <div className="recipe-card">
       <button 
@@ -82,7 +106,9 @@ export default function RecipeCard({ recipe, query, isBookmarked, onToggleBookma
         className="recipe-title" 
         dangerouslySetInnerHTML={{ __html: highlightText(recipe.name, query) }} 
       />
-      <div className="rating">{recipe.rating} / 5</div>
+      <div className="rating-row">
+        <div className="rating">{recipe.rating} / 5</div>
+      </div>
       
       <div className="section-title">Ingredients</div>
       <ul className="ingredients-list">
@@ -103,40 +129,70 @@ export default function RecipeCard({ recipe, query, isBookmarked, onToggleBookma
         )}
       </ul>
 
-      <div className="section-title">Instructions</div>
-      <ol className="instructions-list" style={{ paddingLeft: '1.25rem', margin: '0.5rem 0' }}>
-        {Array.isArray(recipe.instructions) ? (
-          recipe.instructions.map((step, idx) => (
-            <li style={{ marginBottom: '0.5rem' }} key={idx} dangerouslySetInnerHTML={{ 
-              __html: highlightText(replaceMlWithShots(step), query) 
+      {!showMore && (recipe.strength !== null || recipe.taste !== null || recipe.review || recipe.history) && (
+        <button 
+          className="more-info-btn"
+          onClick={() => setShowMore(true)}
+        >
+          More Info
+        </button>
+      )}
+
+      {showMore && (
+        <div className="extra-info-container">
+          <div className="section-title">Instructions</div>
+          <ol className="instructions-list" style={{ paddingLeft: '1.25rem', margin: '0.5rem 0' }}>
+            {Array.isArray(recipe.instructions) ? (
+              recipe.instructions.map((step, idx) => (
+                <li style={{ marginBottom: '0.5rem' }} key={idx} dangerouslySetInnerHTML={{ 
+                  __html: highlightText(replaceMlWithShots(step), query) 
+                }} />
+              ))
+            ) : (
+              <li style={{ marginBottom: '0.5rem' }} dangerouslySetInnerHTML={{ 
+                __html: highlightText(replaceMlWithShots(recipe.instructions), query) 
+              }} />
+            )}
+          </ol>
+
+          {(recipe.strength !== null || recipe.taste !== null) && (
+            <div className="metrics-row" style={{ marginTop: '20px', borderTop: '1px solid #f0f0f0', paddingTop: '15px' }}>
+              <Scale 
+                label="Strength" 
+                value={recipe.strength} 
+                leftLabel="Weak" 
+                rightLabel="Boozy" 
+              />
+              <Scale 
+                label="Taste" 
+                value={recipe.taste} 
+                leftLabel="Sweet" 
+                rightLabel="Sour" 
+              />
+            </div>
+          )}
+          {recipe.review && (
+            <div className="section-title">Review</div>
+          )}
+          {recipe.review && (
+            <div className="review-box" dangerouslySetInnerHTML={{
+              __html: highlightText(replaceMlWithShots(recipe.review), query)
             }} />
-          ))
-        ) : (
-          <li style={{ marginBottom: '0.5rem' }} dangerouslySetInnerHTML={{ 
-            __html: highlightText(replaceMlWithShots(recipe.instructions), query) 
-          }} />
-        )}
-      </ol>
-      {recipe.review && (
-        <div className="section-title">Review</div>
-      )}
-      {recipe.review && (
-        <div className="review-box" dangerouslySetInnerHTML={{
-          __html: highlightText(replaceMlWithShots(recipe.review), query)
-        }} />
-      )}
-      {recipe.history && (
-        <div className="section-title">History</div>
-      )}
-      {recipe.history && (
-        <div className="history-box" dangerouslySetInnerHTML={{
-          __html: highlightText(replaceMlWithShots(recipe.history), query)
-        }} />
-      )}
-      {recipe.comment && !recipe.review && !recipe.history && (
-        <div className="comment" dangerouslySetInnerHTML={{
-          __html: highlightText(replaceMlWithShots(recipe.comment), query)
-        }} />
+          )}
+          {recipe.history && (
+            <div className="section-title">History</div>
+          )}
+          {recipe.history && (
+            <div className="history-box" dangerouslySetInnerHTML={{
+              __html: highlightText(replaceMlWithShots(recipe.history), query)
+            }} />
+          )}
+          {recipe.comment && !recipe.review && !recipe.history && (
+            <div className="comment" dangerouslySetInnerHTML={{
+              __html: highlightText(replaceMlWithShots(recipe.comment), query)
+            }} />
+          )}
+        </div>
       )}
     </div>
   );

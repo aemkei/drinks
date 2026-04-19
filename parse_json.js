@@ -47,6 +47,12 @@ files.forEach(file => {
     return text.replace(/<[^>]+>/g, '').trim();
   };
 
+  const getMetric = (htmlContent, label) => {
+    const regex = new RegExp(`alt="${label}\\s(\\d+)/10"`, 'i');
+    const match = htmlContent.match(regex);
+    return match ? parseInt(match[1]) : null;
+  };
+
   if (recipeData) {
     const name = recipeData.name || '';
     const rating = recipeData.aggregateRating ? parseFloat(recipeData.aggregateRating.ratingValue) : 0;
@@ -59,6 +65,9 @@ files.forEach(file => {
     const review = getSectionText(html, 'anchor-review');
     const history = getSectionText(html, 'anchor-history');
     
+    const strength = getMetric(html, 'Strength');
+    const taste = getMetric(html, 'Sweet to sour');
+
     const ingredients = recipeData.recipeIngredient || [];
     
     const instructionsArr = recipeData.recipeInstructions || [];
@@ -88,6 +97,8 @@ files.forEach(file => {
         garnish,
         review,
         history,
+        strength,
+        taste,
         comment: description,
       });
     }
