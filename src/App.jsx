@@ -9,6 +9,7 @@ const escapeRegExp = (string) => {
 export default function App() {
   const [allRecipes, setAllRecipes] = useState([]);
   const [query, setQuery] = useState('');
+  const [isFocused, setIsFocused] = useState(false);
   const [bookmarks, setBookmarks] = useState(() => {
     try {
       const stored = localStorage.getItem('bookmarks');
@@ -73,43 +74,54 @@ export default function App() {
   };
 
   return (
-    <div className="container">
-      <div className="search-container">
-        <div className="input-wrapper">
-          <input
-            type="text"
-            id="search-input"
-            placeholder="Search for a drink..."
-            autoComplete="off"
-            autoFocus
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-          />
-          {query && (
-            <button 
-              className="clear-btn" 
-              onClick={() => { setQuery(''); document.getElementById('search-input').focus(); }}
-              aria-label="Clear search"
-            >
-              ✕
-            </button>
+    <div className={`container ${isFocused || query ? 'search-active' : ''}`}>
+      <header className="main-header">
+        <h1>Sip</h1>
+        <small>Find your perfect drink!</small>
+      </header>
+
+      <div className="search-section">
+        <div className="search-row">
+          <div className="search-container">
+            <div className="input-wrapper">
+              <input
+                type="text"
+                id="search-input"
+                placeholder="Find a cocktail..."
+                autoComplete="off"
+                autoFocus
+                value={query}
+                onFocus={() => setIsFocused(true)}
+                onBlur={() => setIsFocused(false)}
+                onChange={(e) => setQuery(e.target.value)}
+              />
+              {query && (
+                <button 
+                  className="clear-btn" 
+                  onClick={() => { setQuery(''); document.getElementById('search-input').focus(); }}
+                  aria-label="Clear search"
+                >
+                  ✕
+                </button>
+              )}
+            </div>
+          </div>
+          
+          {!query && (
+            <div className="favorites-container">
+              <BookmarkChips 
+                bookmarks={bookmarks} 
+                allRecipes={allRecipes} 
+                onChipClick={handleChipClick} 
+              />
+            </div>
           )}
         </div>
-        {!query && (
-          <BookmarkChips 
-            bookmarks={bookmarks} 
-            allRecipes={allRecipes} 
-            onChipClick={handleChipClick} 
-          />
-        )}
       </div>
 
       <div id="results-container" className="results">
         {query && filteredRecipes.length === 0 && (
           <div className="empty-state">No matches found.</div>
-        )}
-        {!query && (
-          <div className="empty-state">Start typing to find recipes</div>
         )}
         {filteredRecipes.map(recipe => (
           <RecipeCard 

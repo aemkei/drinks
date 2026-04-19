@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap');
+
 :root {
     --bg: #fcfcfc;
     --text: #000000;
@@ -19,7 +21,7 @@
 }
 
 body {
-    font-family: 'Slabo 27px', sans-serif;
+    font-family: 'Noto Serif', serif;
     background-color: var(--bg);
     color: var(--text);
     margin: 0;
@@ -29,16 +31,27 @@ body {
     align-items: center;
     min-height: 100vh;
     line-height: 1.2;
-    font-size: 1.2em;
+    font-size: 1.25em;
 }
 
 .container {
     width: 100%;
 }
 
-header {
+.main-header {
     margin-bottom: 40px;
     text-align: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    height: auto;
+    max-height: 200px;
+}
+
+.search-active .main-header {
+    max-height: 0;
+    margin-bottom: 0px;
+    opacity: 0;
+    pointer-events: none;
 }
 
 h1 {
@@ -48,15 +61,31 @@ h1 {
     letter-spacing: -0.02em;
 }
 
-small {
-    font-size: 1em;
+.search-section {
+    width: 100%;
+    margin-bottom: 30px;
+    transition: all 0.4s ease;
+}
+
+.search-label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
     color: var(--muted);
-    font-weight: 300;
-    font-variant: all-small-caps;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+    padding-left: 4px;
+}
+
+.search-row {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
 }
 
 .search-container {
-    margin-bottom: 30px;
     position: relative;
     width: 100%;
 }
@@ -64,6 +93,11 @@ small {
 .input-wrapper {
     position: relative;
     width: 100%;
+}
+
+.favorites-container {
+    display: flex;
+    align-items: center;
 }
 
 .clear-btn {
@@ -91,7 +125,7 @@ small {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-top: 12px;
+    margin-top: 0; /* Remove top margin when in row */
     animation: fadeIn 0.3s ease;
 }
 
