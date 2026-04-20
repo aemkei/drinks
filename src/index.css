@@ -342,14 +342,7 @@ h1 {
     border-radius: 8px;
     margin-top: 5px;
     font-size: 0.95rem;
-}
-
-.review-box {
-    border-left: 4px solid #4caf50; /* Green aspect */
-}
-
-.history-box {
-    border-left: 4px solid #ff9800; /* Orange aspect */
+    line-height: 1.4em;
 }
 
 .empty-state {

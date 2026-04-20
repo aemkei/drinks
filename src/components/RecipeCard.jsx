@@ -66,7 +66,7 @@ const highlightText = (text, query) => {
   ).join('');
 };
 
-const Scale = ({ label, value, leftLabel, rightLabel }) => {
+const Scale = ({ label, value, leftLabel, rightLabel, color }) => {
   if (value === null || value === undefined) return null;
   const percentage = (value / 10) * 100;
   return (
@@ -77,7 +77,13 @@ const Scale = ({ label, value, leftLabel, rightLabel }) => {
       </div>
       <div className="scale-bar-wrapper">
         <div className="scale-bar-bg">
-          <div className="scale-bar-fill" style={{ width: `${percentage}%` }} />
+          <div 
+            className="scale-bar-fill" 
+            style={{ 
+              width: `${percentage}%`,
+              backgroundColor: color || 'var(--accent)'
+            }} 
+          />
         </div>
       </div>
       <div className="scale-footer">
@@ -169,12 +175,14 @@ export default function RecipeCard({ recipe, query, isBookmarked, onToggleBookma
                 value={recipe.strength} 
                 leftLabel="Weak" 
                 rightLabel="Boozy" 
+                color={recipe.strength !== null ? `hsl(220, ${20 + 80 * (recipe.strength / 10)}%, ${90 - 50 * (recipe.strength / 10)}%)` : null}
               />
               <Scale 
                 label="Taste" 
                 value={recipe.taste} 
                 leftLabel="Sweet" 
                 rightLabel="Sour" 
+                color={recipe.taste !== null ? `hsl(${(135 * (recipe.taste / 10) + 315) % 360}, 75%, 55%)` : null}
               />
             </div>
           )}
