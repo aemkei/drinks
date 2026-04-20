@@ -1,6 +1,6 @@
 {
-  "name": "Drinks",
-  "short_name": "Drinks",
+  "name": "Sip",
+  "short_name": "Sip",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#fcfcfc",
