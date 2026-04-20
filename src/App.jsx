@@ -74,7 +74,7 @@ export default function App() {
   };
 
   return (
-    <div className={`container ${isFocused || query ? 'search-active' : ''}`}>
+    <div className={`container ${query ? 'search-active' : ''}`}>
       <header className="main-header">
         <h1>Sip</h1>
         <small>Find your perfect drink!</small>
